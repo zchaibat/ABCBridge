@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+using System;
 
 public class BoutonScript : MonoBehaviour
 {
-    public void changerScene()
+    public void changerScene(String sceneNom)
     {
-        SceneManager.LoadScene("Scenes/testScene");
+        //"Scenes/testScene"
+        SceneManager.LoadScene(sceneNom);
+    }
+    public void quitter()
+    {
     }
 
     
