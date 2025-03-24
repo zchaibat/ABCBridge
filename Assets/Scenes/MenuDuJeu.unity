@@ -157,7 +157,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 918, y: 412}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &114771668
 MonoBehaviour:
@@ -294,14 +294,14 @@ RectTransform:
   m_GameObject: {fileID: 517704460}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0473123, y: 1.742473, z: 0.49783123}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.8318784, z: 0.23767085}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 803041007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -25}
+  m_AnchoredPosition: {x: -5, y: -7}
   m_SizeDelta: {x: 571.2574, y: 79.3799}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &517704462
@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 803328705}
   - component: {fileID: 803328704}
   - component: {fileID: 803328703}
-  - component: {fileID: 803328702}
+  - component: {fileID: 803328706}
   m_Layer: 5
   m_Name: ButtonQuitter
   m_TagString: Untagged
@@ -557,28 +557,16 @@ RectTransform:
   m_GameObject: {fileID: 803328700}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.04731, y: 1.7424699, z: 0.49782997}
+  m_LocalScale: {x: 0.5, y: 0.8318784, z: 0.49782997}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 803041007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -342}
+  m_AnchoredPosition: {x: -5, y: -162}
   m_SizeDelta: {x: 571.2574, y: 79.3799}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &803328702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 803328700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 739701bf961682b47a53dd2e0e3cb19e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &803328703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,13 +611,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 739701bf961682b47a53dd2e0e3cb19e, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 803328706}
+        m_TargetAssemblyTypeName: BoutonScript, Assembly-CSharp
+        m_MethodName: quitter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -673,6 +661,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803328700}
   m_CullTransparentMesh: 1
+--- !u!114 &803328706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803328700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ade356983672ef4fb40baab69326bd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1337384663
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,14 +703,14 @@ RectTransform:
   m_GameObject: {fileID: 1337384663}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.04731, y: 1.7424699, z: 0.49782997}
+  m_LocalScale: {x: 0.5, y: 0.8318784, z: 0.49782997}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 803041007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -180}
+  m_AnchoredPosition: {x: -5, y: -85}
   m_SizeDelta: {x: 571.2574, y: 79.3799}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337384665

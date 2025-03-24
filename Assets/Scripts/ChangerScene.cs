@@ -15,6 +15,8 @@ public class BoutonScript : MonoBehaviour
     }
     public void quitter()
     {
+        Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 
     
