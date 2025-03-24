@@ -1,32 +1,36 @@
-using System.Runtime.ConstrainedExecution;
+using System;
 using UnityEngine;
 
 public class Niveau : MonoBehaviour
 {
-    private Point pointAncre1 = new Point(-30,10);
-    private Point pointAncre2 = new Point(30,20);
-    private const double distanceEntrePoints = 0.5;
+    public Camera camera;
+    public GameObject grillePoints;
+
+    private const float distanceEntrePoints = 0.5f;
     
 
     // Start is called before the first frame update
-    void creerNiveau()
+    public void creerNiveau()
     {
+        Debug.Log("creer niveau");
 
-        var distanceEntrePointsAncres = pointAncre2.getCoordonneX() - pointAncre1.getCoordonneX();
+        Point pointAncre1 = new Point(-30, -10, grillePoints.transform);
+        Point pointAncre2 = new Point(30, 10, grillePoints.transform);
 
-        var x = 0.0;
+        var distanceEntrePointsAncres = pointAncre1.getCoordonneX() - pointAncre2.getCoordonneX();
+
+        var x = 0.0f;
 
         while(x < distanceEntrePointsAncres)
         {
-            var y = -15.0;
 
-            while(y < 15)
+            var y = -camera.orthographicSize;
+
+            while(y < Math.Abs(y))
             {
-                new Point(x, y);
+                new Point(x, y, grillePoints.transform);
                 y += distanceEntrePoints;
             }
-
-
 
             x += distanceEntrePointsAncres; 
         }
@@ -34,7 +38,7 @@ public class Niveau : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         
     }
