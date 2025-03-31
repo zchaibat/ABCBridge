@@ -4,8 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - prefabPoint: {fileID: 3662750010953565063, guid: 30176c9c30caf0b41bb189fbbfe56dec, type: 3}
-  - grillePoints: {instanceID: 0}
+  - prefabPoint: {fileID: 1002555487321045486, guid: 59619e253bfc7f8439840c5e78af382a, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
