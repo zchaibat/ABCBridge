@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8287285434264622686}
   - component: {fileID: 2956311011825147421}
   - component: {fileID: 6366903308683873248}
-  - component: {fileID: 9004095448078605741}
+  - component: {fileID: 5493318152848970983}
   m_Layer: 0
   m_Name: Sport Car_20 FL Tire
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!146 &9004095448078605741
+--- !u!146 &5493318152848970983
 WheelCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,8 +92,8 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44064314674766167}
   serializedVersion: 2
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.15, z: 0}
+  m_Radius: 0.4
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -243,7 +243,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700434514939922018}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -274,8 +274,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de4af70860c76cc4e9826525190542d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 0
-  vitesseMax: 10
+  moveSpeed: 5
+  steeringSpeed: 150
+  frontLeftWheelCollider: {fileID: 5493318152848970983}
+  frontRightWheelCollider: {fileID: 1596737020409321557}
+  backLeftWheelCollider: {fileID: 1448002406551814016}
+  backRightWheelCollider: {fileID: 7262498193536848438}
+  frontLeftWheel: {fileID: 8287285434264622686}
+  frontRightWheel: {fileID: 2186607329931098216}
+  backLeftWheel: {fileID: 5158576255269455288}
+  backRightWheel: {fileID: 7136717312468499120}
+  raycastLength: 1
+  suspensionDistance: 0.3
+  suspensionSpring: 35000
+  suspensionDamper: 4500
+  wheelRadius: 0.4
 --- !u!1 &1160602894312050048
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +300,7 @@ GameObject:
   - component: {fileID: 5158576255269455288}
   - component: {fileID: 1160150722361925601}
   - component: {fileID: 2027556015062606157}
-  - component: {fileID: 1065740898863509652}
+  - component: {fileID: 1448002406551814016}
   m_Layer: 0
   m_Name: Sport Car_20 BL Tire
   m_TagString: Untagged
@@ -360,7 +373,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!146 &1065740898863509652
+--- !u!146 &1448002406551814016
 WheelCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -368,8 +381,8 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160602894312050048}
   serializedVersion: 2
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.15, z: 0}
+  m_Radius: 0.4
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -410,7 +423,7 @@ GameObject:
   - component: {fileID: 7136717312468499120}
   - component: {fileID: 2535596677126669229}
   - component: {fileID: 6287991686399498877}
-  - component: {fileID: 2115801890229824020}
+  - component: {fileID: 7262498193536848438}
   m_Layer: 0
   m_Name: Sport Car_20 BR Tire
   m_TagString: Untagged
@@ -483,7 +496,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!146 &2115801890229824020
+--- !u!146 &7262498193536848438
 WheelCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -491,8 +504,8 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6138644286540149156}
   serializedVersion: 2
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.15, z: 0}
+  m_Radius: 0.4
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -533,7 +546,7 @@ GameObject:
   - component: {fileID: 2186607329931098216}
   - component: {fileID: 584446967127757454}
   - component: {fileID: 6102138160867608854}
-  - component: {fileID: 227214083014159030}
+  - component: {fileID: 1596737020409321557}
   m_Layer: 0
   m_Name: Sport Car_20 FR Tire
   m_TagString: Untagged
@@ -606,7 +619,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!146 &227214083014159030
+--- !u!146 &1596737020409321557
 WheelCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -614,8 +627,8 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8047263537535593811}
   serializedVersion: 2
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.15, z: 0}
+  m_Radius: 0.4
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
