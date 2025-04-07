@@ -11,20 +11,24 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     public GameObject pauseMenu;
 
-    public static bool jeuPause;
+    public static bool jeuPause = false;
     public void Pause()
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        jeuPause = true;
+        
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+            jeuPause = true;
+        
     }
 
 
     public void Resume()
     {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        jeuPause = false;   
+        
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1f;
+            jeuPause = false;
+        
     }
 
     public void RetourMenu(String nomScene)
@@ -37,6 +41,8 @@ public class PauseMenu : MonoBehaviour
      void Update(){
         if (Input.GetKeyUp(KeyCode.Escape))
         {
+            
+
             if (jeuPause == true)
             {
                 Resume();
