@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -55,12 +55,12 @@ public class BarCreator : MonoBehaviour, IPointerDownHandler
     {
         Destroy(CurrentBar.gameObject);
 
-        if (CurrentStartPoint.ConnectedBars.Count == 0 && !CurrentStartPoint.Runtime)
+        if (CurrentStartPoint.ConnectedBars.Count == 0 && CurrentStartPoint.Runtime == true)
         {
             Destroy(CurrentStartPoint.gameObject);
         }
 
-        if (CurrentEndPoint.ConnectedBars.Count == 0 && !CurrentEndPoint.Runtime)
+        if (CurrentEndPoint.ConnectedBars.Count == 0 && CurrentEndPoint.Runtime == true)
         {
             Destroy(CurrentEndPoint.gameObject);
         }
