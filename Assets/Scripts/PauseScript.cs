@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] GameObject pauseMenu;
+     [SerializeField] GameObject pauseMenu;
 
     public static bool jeuPause = false;
     public void Pause()
