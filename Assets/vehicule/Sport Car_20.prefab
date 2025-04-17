@@ -205,7 +205,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700434514939922018}
   serializedVersion: 4
-  m_Mass: 2500
+  m_Mass: 1300
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -236,17 +236,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de4af70860c76cc4e9826525190542d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorForce: 1000
-  breakForce: 3000
-  maxSteerAngle: 30
-  frontLeftWheelCollider: {fileID: 2664312180422477443}
-  frontRightWheelCollider: {fileID: 5016559027358140494}
-  rearLeftWheelCollider: {fileID: 1373760710245821387}
-  rearRightWheelCollider: {fileID: 5111033421807155197}
-  frontLeftWheelTransform: {fileID: 8287285434264622686}
-  frontRightWheelTransform: {fileID: 2186607329931098216}
-  rearLeftWheelTransform: {fileID: 5158576255269455288}
-  rearRightWheelTransform: {fileID: 7136717312468499120}
+  forceMoteur: 1000
+  forceFreinage: 3000
+  angleMaxDirection: 0
+  roueAvantGaucheCollider: {fileID: 2664312180422477443}
+  roueAvantDroiteCollider: {fileID: 5016559027358140494}
+  roueArriereGaucheCollider: {fileID: 1373760710245821387}
+  roueArriereDroiteCollider: {fileID: 5111033421807155197}
+  roueAvantGaucheTransform: {fileID: 8287285434264622686}
+  roueAvantDroiteTransform: {fileID: 2186607329931098216}
+  roueArriereGaucheTransform: {fileID: 5158576255269455288}
+  roueArriereDroiteTransform: {fileID: 7136717312468499120}
 --- !u!1 &1160602894312050048
 GameObject:
   m_ObjectHideFlags: 0
