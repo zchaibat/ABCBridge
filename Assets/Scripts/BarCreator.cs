@@ -74,4 +74,21 @@ public class BarCreator : MonoBehaviour, IPointerDownHandler
             CurrentBar.UpdateCreatingBar(CurrentEndPoint.transform.position);
         }
     }
+    public void TryStartOrEndBar(Vector2 position)
+    {
+        if (!BarCreationStarted)
+        {
+            BarCreationStarted = true;
+            StartBarCreation(position);
+        }
+        else
+        {
+            FinishBarCreation();
+        }
+    }
+    public void CancelBar()
+    {
+        BarCreationStarted = false;
+        DeleteCurrentBar();
+    }
 }
