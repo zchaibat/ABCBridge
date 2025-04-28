@@ -15,13 +15,17 @@ public class Niveau : MonoBehaviour
     private Boolean modeConstruction = true;
     private Boolean modeDeboguage = false;
 
-    // Start is called before the first frame update
+    
     public void Start()
     {
 
-        Double tailleCarre = ((Double) (6/20))*camera.orthographicSize;
+        float tailleCarre = (float) (15 / camera.orthographicSize);
 
-        quadrillage.SetFloat("_carresParMetres", (float) tailleCarre);
+        print(tailleCarre);
+
+        float tailleCercle = (float) (1 / tailleCarre);
+
+        quadrillage.SetFloat("_carresParMetres",  tailleCarre);
         texteBudget.GetComponent<TextMeshProUGUI>().SetText(budget.ToString() + "$");
 
 
