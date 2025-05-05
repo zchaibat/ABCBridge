@@ -6,9 +6,13 @@ public class rotationMenu : MonoBehaviour
 {
     [SerializeField] private Vector3 rotation;
 
+    public Material rotationMateriel;
+
     // Update is called once per frame
     void Update()
     {
         transform.Rotate(rotation * Time.deltaTime);
+
+
     }
 }
