@@ -734,7 +734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceMoteur: 1000
   forceFreinage: 3000
-  angleMaxDirection: 0
+  coefficientFrottement: 0.3
   roueAvantGaucheCollider: {fileID: 8823653068228407548}
   roueAvantDroiteCollider: {fileID: 1689027745864520824}
   roueArriereGaucheCollider: {fileID: 2602274470426057809}

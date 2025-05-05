@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 8554827962108084130}
   - component: {fileID: 5293728992963557239}
   - component: {fileID: 4739754376314057277}
-  - component: {fileID: 4325827044051572423}
+  - component: {fileID: -6380464845811617724}
   m_Layer: 0
   m_Name: Lorry_12
   m_TagString: Untagged
@@ -450,7 +450,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4325827044051572423
+--- !u!114 &-6380464845811617724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -459,23 +459,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 4514144648572007288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6bd0a970f2e6ec4f9632d654782c873, type: 3}
+  m_Script: {fileID: 11500000, guid: de4af70860c76cc4e9826525190542d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   forceMoteur: 3000
   forceFreinage: 11000
+  coefficientFrottement: 0.4
   roueAvantGaucheCollider: {fileID: 1910216512044997780}
   roueAvantDroiteCollider: {fileID: 542568744956499551}
-  roueMilieuGaucheCollider: {fileID: 6905131579063537980}
-  roueMilieuDroiteCollider: {fileID: 5685802924238100671}
   roueArriereGaucheCollider: {fileID: 346401404414010007}
   roueArriereDroiteCollider: {fileID: 4838498784690834152}
   roueAvantGaucheTransform: {fileID: 6819507010817083440}
   roueAvantDroiteTransform: {fileID: 8911154493740950551}
-  roueMilieuGaucheTransform: {fileID: 8668880001498329311}
-  roueMilieuDroiteTransform: {fileID: 7552256230347724013}
   roueArriereGaucheTransform: {fileID: 1794897381291849922}
   roueArriereDroiteTransform: {fileID: 6409259374468027839}
+  roueMilieuGaucheCollider: {fileID: 6905131579063537980}
+  roueMilieuDroiteCollider: {fileID: 5685802924238100671}
+  roueMilieuGaucheTransform: {fileID: 8668880001498329311}
+  roueMilieuDroiteTransform: {fileID: 7552256230347724013}
 --- !u!1 &4879332313291310779
 GameObject:
   m_ObjectHideFlags: 0
