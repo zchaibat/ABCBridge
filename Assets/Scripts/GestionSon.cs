@@ -12,7 +12,7 @@ public class GestionSon : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("volumeMusique"))
         {
-            PlayerPrefs.SetFloat("volumeMusique", 1);
+            PlayerPrefs.SetFloat("volumeMusique", 0.5f);
             Charger();
         }
         else

@@ -8,8 +8,10 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
      [SerializeField] GameObject pauseMenu;
+
+    [SerializeField] GameObject optionsMenu;
+
 
     public static bool jeuPause = false;
     public void Pause()
@@ -29,6 +31,24 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 1f;
             jeuPause = false;
         
+    }
+
+    public void Options()
+    {
+
+        pauseMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+
+
+    }
+
+    public void fermerOptions()
+    {
+
+        optionsMenu.SetActive(false);
+        pauseMenu.SetActive(true);
+
+
     }
 
     public void RetourMenu(String nomScene)
