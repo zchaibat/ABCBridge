@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -15,7 +14,7 @@ public class AnchorPointClick : MonoBehaviour, IPointerDownHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
-            barCreator.TryStartOrEndBar(transform.position);
+            barCreator.TryStartOrEndBar(GetComponent<AnchorPoint>());
         else if (eventData.button == PointerEventData.InputButton.Right)
             barCreator.CancelBar();
     }
