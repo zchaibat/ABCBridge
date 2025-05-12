@@ -27,6 +27,13 @@ public class BarCreator : MonoBehaviour, IPointerDownHandler
 
         GameObject endPointGO = Instantiate(PointToInstantiate, startPosition, Quaternion.identity, PointParent);
         CurrentEndPoint = endPointGO.GetComponent<AnchorPoint>();
+
+        // Changer le BodyType en Dynamic pour les points créés en cours de jeu
+Rigidbody2D endPointRB = CurrentEndPoint.GetComponent<Rigidbody2D>();
+if (endPointRB != null)
+{
+    endPointRB.bodyType = RigidbodyType2D.Dynamic;
+}
     }
 
     void FinishBarCreation()
@@ -39,6 +46,12 @@ public class BarCreator : MonoBehaviour, IPointerDownHandler
         // On redémarre automatiquement une nouvelle poutre depuis le point final
         CurrentStartPoint = CurrentEndPoint;
         StartBarCreation(CurrentEndPoint.transform.position);
+
+        // Connecter la poutre aux deux points
+        Rigidbody2D startRb = CurrentStartPoint.GetComponent<Rigidbody2D>();
+        Rigidbody2D endRb = CurrentEndPoint.GetComponent<Rigidbody2D>();
+        CurrentBar.ConnectTo(startRb, endRb);
+
     }
 
 
