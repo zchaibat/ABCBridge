@@ -14,7 +14,7 @@ public class CreationNiveaux : MonoBehaviour
     public float bondY = 100f;
     public int boutonsParLigne = 4;
 
-    public string dossierNiveaux = "Assets/Niveaux";  
+    public string dossierNiveaux = "Assets/Niveaux";
 
     void Start()
     {
@@ -44,7 +44,7 @@ public class CreationNiveaux : MonoBehaviour
 
         string[] fichiers = Directory.GetFiles(dossier);
 
-        return fichiers.Length;
+        return fichiers.Length/2;
     }
 
     void GenererBoutons(int nombreBoutons)
@@ -87,6 +87,7 @@ public class CreationNiveaux : MonoBehaviour
             {
                 buttonComponent.onClick.AddListener(() => BoutonClique(index));
             }
+
 
             //génère un autre colonne si le nombre de bouton dépasse 4
             colonne++;

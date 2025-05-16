@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/AnchorPoint.cs.meta
+guid: 9d6378b2cb7a0d847bd8b23f876ced44
+========
+guid: 0ade356983672ef4fb40baab69326bd0
+>>>>>>>> Menus-et-interfaces:Assets/Scripts/ChangerScene.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
