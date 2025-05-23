@@ -10,10 +10,10 @@ public class ControleScript : MonoBehaviour
 
     public void AlternerAffichage()
     {
-        // Inverse l'état de visibilité
+        //Alterner la visiblité des consignes
         estVisible = !estVisible;
 
-        // Affiche ou cache l'image selon l'état actuel
+        //Afficher ou cacher l'image selon l'état actuel
         consigne.SetActive(estVisible);
     }
 }
