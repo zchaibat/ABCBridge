@@ -8,6 +8,7 @@ using System.IO;
 public class CreationNiveaux : MonoBehaviour
 {
     public GameObject prefabBouton;
+    public GameObject prefabBtnErreur;
     public Transform conteneurBoutons;
 
     public float positionXInitiale = -300f;
@@ -98,6 +99,11 @@ public class CreationNiveaux : MonoBehaviour
                 colonne = 0;
                 ligne++;
             }
+        }
+
+        if(nombreBoutons == 0)
+        {
+            GameObject bouton = Instantiate(prefabBtnErreur, conteneurBoutons);
         }
     }
 

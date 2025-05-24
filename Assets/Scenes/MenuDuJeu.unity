@@ -888,7 +888,7 @@ GameObject:
   - component: {fileID: 517704464}
   - component: {fileID: 517704463}
   m_Layer: 5
-  m_Name: ButtonJouer
+  m_Name: BtnJouer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1547,7 +1547,7 @@ GameObject:
   - component: {fileID: 803328703}
   - component: {fileID: 803328706}
   m_Layer: 5
-  m_Name: ButtonQuitter
+  m_Name: BtnQuitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2171,7 +2171,7 @@ GameObject:
   - component: {fileID: 1080123880}
   - component: {fileID: 1080123879}
   m_Layer: 0
-  m_Name: Music
+  m_Name: Musique
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2419,7 +2419,7 @@ GameObject:
   - component: {fileID: 1337384665}
   - component: {fileID: 1337384671}
   m_Layer: 5
-  m_Name: ButtonOptions
+  m_Name: BtnOptions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3656,6 +3656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabBouton: {fileID: 4305871097232261839, guid: 0a1cc44ce0a0e9349997208812a6eebc, type: 3}
+  prefabBtnErreur: {fileID: 2383231712047895965, guid: 1d2c2c5b3c5e4f44fa01bcebcd5317c5, type: 3}
   conteneurBoutons: {fileID: 618700264}
   positionXInitiale: -300
   bondX: 200
@@ -3697,7 +3698,7 @@ GameObject:
   - component: {fileID: 1904766328}
   - component: {fileID: 1904766327}
   m_Layer: 5
-  m_Name: ButtonRetour
+  m_Name: BtnRetour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
