@@ -1,7 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[ExecuteInEditMode]
+
 public class AnchorPoint : MonoBehaviour
 {
     public List<Bar> ConnectedBars = new List<Bar>();
@@ -9,14 +8,10 @@ public class AnchorPoint : MonoBehaviour
 
     private void Update()
     {
-        if (Runtime == false)
+        if (!Runtime && transform.hasChanged)
         {
-            if (transform.hasChanged == true)
-            {
-                transform.hasChanged = false;
-                transform.position = Vector3Int.RoundToInt(transform.position);
-            }
+            transform.hasChanged = false;
+            transform.position = Vector3Int.RoundToInt(transform.position);
         }
     }
 }
-

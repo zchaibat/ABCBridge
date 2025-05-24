@@ -10,7 +10,6 @@ public class Niveau : MonoBehaviour
     public GameObject texteBudget;
     public Material quadrillage;
     public Camera camera;
-    private Boolean modeConstruction = true;
     private Boolean modeDeboguage = false;
     public GameObject referencePoint;
 
@@ -37,13 +36,19 @@ public class Niveau : MonoBehaviour
 
     public void commencerPartie()
     {
-        modeConstruction = false;
         Time.timeScale = 1;
     }
+
+    public void pausePartie()
+    {
+        
+        Time.timeScale = 0;
+    }
+
+
 
     // Update is called once per frame
     public void Update()
     {
-        
     }
 }

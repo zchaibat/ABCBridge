@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: b9173d16193cb134ba5cbfce23eb0868
+guid: d9c3b1c99494a174d85c1ed3e63478b9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - barSpriteRenderer: {fileID: 5052579734316282059, guid: 25d58b87956e41c4c9a25e776dcff300, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

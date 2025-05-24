@@ -3,7 +3,14 @@ guid: e0db0728902f31a458ab03cd91dcf289
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - CurrentBar: {instanceID: 0}
+  - BarToInstantiate: {fileID: 3534062490334194556, guid: 25d58b87956e41c4c9a25e776dcff300, type: 3}
+  - BarParent: {instanceID: 0}
+  - CurrentStartPoint: {instanceID: 0}
+  - CurrentEndPoint: {instanceID: 0}
+  - PointToInstantiate: {fileID: 1274809091015995357, guid: 5cb9e03dfb9d7eb408e9b752661902c2, type: 3}
+  - PointParent: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
