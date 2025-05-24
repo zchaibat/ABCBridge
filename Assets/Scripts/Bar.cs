@@ -4,9 +4,12 @@ using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BoxCollider2D))]
+
+// Script qui gère les poutres (la liaison entre les poutres, les colliders, la position)
+
 public class Bar : MonoBehaviour
 {
-    public Vector2 StartPosition;
+    public Vector2 positionDepart;
     public SpriteRenderer barSpriteRenderer;
     private BoxCollider2D boxCollider;
 
@@ -19,10 +22,10 @@ public class Bar : MonoBehaviour
     public void UpdateCreatingBar(Vector2 ToPosition)
     {
         // Positionner la poutre entre les deux points
-        transform.position = (ToPosition + StartPosition) / 2;
+        transform.position = (ToPosition + positionDepart) / 2;
 
         // Calculer direction et angle
-        Vector2 dir = ToPosition - StartPosition;
+        Vector2 dir = ToPosition - positionDepart;
         float angle = Vector2.SignedAngle(Vector2.right, dir);
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
 

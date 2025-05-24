@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 using System;
 
+// Script qui permet de changer de scène
+
 public class BoutonScript : MonoBehaviour
 {
     public void changerScene(String sceneNom)
     {
-        //"Scenes/testScene"
         SceneManager.LoadScene(sceneNom);
     }
     public void quitter()

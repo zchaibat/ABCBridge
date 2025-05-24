@@ -3,118 +3,121 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// Script qui gère la création d'une poutre
+
 public class BarCreator : MonoBehaviour, IPointerDownHandler
 {
-    bool BarCreationStarted = false;
-    public Bar CurrentBar;
-    public GameObject BarToInstantiate;
-    public Transform BarParent;
-    public AnchorPoint CurrentStartPoint;
-    public AnchorPoint CurrentEndPoint;
-    public GameObject PointToInstantiate;
-    public Transform PointParent;
+    bool creationCommencee = false;
+    public Bar barreActuelle;
+    public GameObject prefabBarre;
+    public Transform conteneurPoutres;
+    public AnchorPoint pointDepart;
+    public AnchorPoint pointFinal;
+    public GameObject prefabPoint;
+    public Transform conteneurPoints;
 
     public void OnPointerDown(PointerEventData eventData)
     {
         // Ne rien faire sur clic dans le vide
     }
 
-    void StartBarCreation(Vector2 startPosition)
+    void CommencerCreationBarre(Vector2 startPosition)
     {
-        GameObject barGO = Instantiate(BarToInstantiate, startPosition, Quaternion.identity, BarParent);
-        CurrentBar = barGO.GetComponent<Bar>();
-        CurrentBar.StartPosition = startPosition;
+        GameObject barGO = Instantiate(prefabBarre, startPosition, Quaternion.identity, conteneurPoutres);
+        barreActuelle = barGO.GetComponent<Bar>();
+        barreActuelle.positionDepart = startPosition;
 
-        GameObject endPointGO = Instantiate(PointToInstantiate, startPosition, Quaternion.identity, PointParent);
-        CurrentEndPoint = endPointGO.GetComponent<AnchorPoint>();
+        GameObject endPointGO = Instantiate(prefabPoint, startPosition, Quaternion.identity, conteneurPoints);
+        pointFinal = endPointGO.GetComponent<AnchorPoint>();
 
         // Changer le BodyType en Dynamic pour les points créés en cours de jeu
-Rigidbody2D endPointRB = CurrentEndPoint.GetComponent<Rigidbody2D>();
-if (endPointRB != null)
-{
-    endPointRB.bodyType = RigidbodyType2D.Dynamic;
-}
+        Rigidbody2D endPointRB = pointFinal.GetComponent<Rigidbody2D>();
+
+        if (endPointRB != null)
+        {
+        endPointRB.bodyType = RigidbodyType2D.Dynamic;
+        }
     }
 
-    void FinishBarCreation()
+    void FinirCreationBarre()
     {
-        CurrentStartPoint.ConnectedBars.Add(CurrentBar);
-        CurrentEndPoint.ConnectedBars.Add(CurrentBar);
+        pointDepart.BarresConnectées.Add(barreActuelle);
+        pointFinal.BarresConnectées.Add(barreActuelle);
 
-        CurrentBar.UpdateCreatingBar(CurrentEndPoint.transform.position);
+        barreActuelle.UpdateCreatingBar(pointFinal.transform.position);
 
         // On redémarre automatiquement une nouvelle poutre depuis le point final
-        CurrentStartPoint = CurrentEndPoint;
-        StartBarCreation(CurrentEndPoint.transform.position);
+        pointDepart = pointFinal;
+        CommencerCreationBarre(pointFinal.transform.position);
 
         // Connecter la poutre aux deux points
-        Rigidbody2D startRb = CurrentStartPoint.GetComponent<Rigidbody2D>();
-        Rigidbody2D endRb = CurrentEndPoint.GetComponent<Rigidbody2D>();
-        CurrentBar.ConnectTo(startRb, endRb);
+        Rigidbody2D startRb = pointDepart.GetComponent<Rigidbody2D>();
+        Rigidbody2D endRb = pointFinal.GetComponent<Rigidbody2D>();
+        barreActuelle.ConnectTo(startRb, endRb);
 
     }
 
 
-    public void CancelBar()
+    public void CancelBarre()
     {
-        BarCreationStarted = false;
+        creationCommencee = false;
 
-        if (CurrentBar != null)
-            Destroy(CurrentBar.gameObject);
+        if (barreActuelle != null)
+            Destroy(barreActuelle.gameObject);
 
         // Supprime le point temporaire s'il a été créé dynamiquement
-        if (CurrentEndPoint != null && CurrentEndPoint.ConnectedBars.Count == 0 && CurrentEndPoint.Runtime)
-            Destroy(CurrentEndPoint.gameObject);
+        if (pointFinal != null && pointFinal.BarresConnectées.Count == 0 && pointFinal.Runtime)
+            Destroy(pointFinal.gameObject);
 
-        CurrentBar = null;
-        CurrentEndPoint = null;
-        // Ne touche pas à CurrentStartPoint ici
+        barreActuelle = null;
+        pointFinal = null;
+        // Ne touche pas à pointDepart ici
     }
 
 
-    void DeleteCurrentBar()
+    void SupprimerBarre()
     {
-        if (CurrentBar != null)
-            Destroy(CurrentBar.gameObject);
+        if (barreActuelle != null)
+            Destroy(barreActuelle.gameObject);
 
-        if (CurrentEndPoint != null && CurrentEndPoint.ConnectedBars.Count == 0 && CurrentEndPoint.Runtime)
-            Destroy(CurrentEndPoint.gameObject);
+        if (pointFinal != null && pointFinal.BarresConnectées.Count == 0 && pointFinal.Runtime)
+            Destroy(pointFinal.gameObject);
 
         // Ne pas supprimer StartPoint : il n’a jamais été instancié dynamiquement ici
 
-        CurrentBar = null;
-        CurrentEndPoint = null;
-        CurrentStartPoint = null;
+        barreActuelle = null;
+        pointFinal = null;
+        pointDepart = null;
     }
 
     private void Update()
     {
-        if (BarCreationStarted && CurrentEndPoint != null && CurrentBar != null)
+        if (creationCommencee && pointFinal != null && barreActuelle != null)
         {
             Vector2 mousePos = Vector2Int.RoundToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            CurrentEndPoint.transform.position = mousePos;
-            CurrentBar.UpdateCreatingBar(mousePos);
+            pointFinal.transform.position = mousePos;
+            barreActuelle.UpdateCreatingBar(mousePos);
         }
     }
 
-    public void TryStartOrEndBar(AnchorPoint clickedPoint)
+    public void EssayerCreerPoutre(AnchorPoint clickedPoint)
     {
-        if (!BarCreationStarted)
+        if (!creationCommencee)
         {
-            BarCreationStarted = true;
-            CurrentStartPoint = clickedPoint;
-            StartBarCreation(clickedPoint.transform.position);
+            creationCommencee = true;
+            pointDepart = clickedPoint;
+            CommencerCreationBarre(clickedPoint.transform.position);
         }
         else
         {
-            if (clickedPoint == CurrentStartPoint)
+            if (clickedPoint == pointDepart)
             {
-                CancelBar();
+                CancelBarre();
                 return;
             }
 
-            CurrentEndPoint = clickedPoint;
-            FinishBarCreation();
+            pointFinal = clickedPoint;
+            FinirCreationBarre();
         }
     }
 }

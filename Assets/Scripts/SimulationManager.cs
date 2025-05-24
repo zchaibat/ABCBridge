@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script pas utilisé dans le projet, je ne suis pas l'auteur de ce code et donc, je ne peux pas l'expliquer...
+
 public class SimulationManager : MonoBehaviour
 {
     public List<Rigidbody2D> bodiesToActivate = new List<Rigidbody2D>();

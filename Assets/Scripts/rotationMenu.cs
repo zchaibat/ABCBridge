@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script qui fait tourner les nuages dans le menu principal pour le rendre plus dynamique
+
 public class rotationMenu : MonoBehaviour
 {
     [SerializeField] private Vector3 rotation;
@@ -12,7 +14,6 @@ public class rotationMenu : MonoBehaviour
     void Update()
     {
         transform.Rotate(rotation * Time.deltaTime);
-
 
     }
 }

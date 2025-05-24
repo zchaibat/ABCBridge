@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
+// Script qui gère le fonctionnement des véhicules (Avancer, reculer, gravité, frottement et toute ce qui a rapport avec les véhicules)
+
 public class Vehicule : MonoBehaviour
 {
     private float entreeHorizontale;

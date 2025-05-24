@@ -5,13 +5,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
+// Script qui gère la logique de la scène de jeu (Création d'un niveau (pas finie), commencer/pause, budget, taille de la camera, du quadrillage et des points)
+
 public class Niveau : MonoBehaviour
 {
     public GameObject texteBudget;
     public Material quadrillage;
     public Camera camera;
     private Boolean modeDeboguage = false;
-    public GameObject referencePoint;
+    public GameObject pointReference;
 
     public GameObject vehicule;
     public GameObject mapGauche;
@@ -27,7 +29,7 @@ public class Niveau : MonoBehaviour
         float tailleCarre = (float) (15 / camera.orthographicSize);
 
         float tailleCercle = 1/tailleCarre;
-        referencePoint.transform.localScale = new Vector3(tailleCercle, tailleCercle, tailleCercle);
+        pointReference.transform.localScale = new Vector3(tailleCercle, tailleCercle, tailleCercle);
 
         quadrillage.SetFloat("_carresParMetres",  tailleCarre);
         texteBudget.GetComponent<TextMeshProUGUI>().SetText(budget.ToString() + "$");

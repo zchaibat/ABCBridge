@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4804435041600158844}
   - component: {fileID: 3994068029194849092}
   m_Layer: 0
-  m_Name: WoodPlank
+  m_Name: Poutre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

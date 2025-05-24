@@ -1,21 +1,23 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// Script qui déclenche la création d'une poutre quand un point est cliqué
+
 public class AnchorPointClick : MonoBehaviour, IPointerDownHandler
 {
-    public BarCreator barCreator;
+    public BarCreator createurPoutre;
 
     private void Start()
     {
-        if (barCreator == null)
-            barCreator = FindObjectOfType<BarCreator>();
+        if (createurPoutre == null)
+            createurPoutre = FindObjectOfType<BarCreator>();
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
-            barCreator.TryStartOrEndBar(GetComponent<AnchorPoint>());
+            createurPoutre.EssayerCreerPoutre(GetComponent<AnchorPoint>());
         else if (eventData.button == PointerEventData.InputButton.Right)
-            barCreator.CancelBar();
+            createurPoutre.CancelBarre();
     }
 }

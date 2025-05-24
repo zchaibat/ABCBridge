@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using TMPro;  // Pour TextMeshPro
 using System.IO;
 
+// Script qui génère les boutons dans le menu principal qui amènent à la scène de jeu à partir d'un dossier avec des GameObjects qui représentent les niveaux
+
 public class CreationNiveaux : MonoBehaviour
 {
     public GameObject prefabBouton;

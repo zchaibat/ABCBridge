@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script qui gère le mouvement de la caméra dans le menu principal pour montrer les différents menus (Rajoute du dynamisme au menu principal)
+
 public class BougerCamera : MonoBehaviour
 {
     public float vitesse =  10;

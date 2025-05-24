@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Script qui gère le son (Musique et Effets de son qui n'ont pas été implémenté)
+
 public class GestionSon : MonoBehaviour
 {
     [SerializeField] Slider curseurVolume;

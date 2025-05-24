@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script pas implémenté dans le projet à cause du blocage sur le code de la physique, on n'a pas pu aller de l'avant avec les matériaux, car les bugs avec le pont nous retenaient
+
 public abstract class MateriauPont
 {
     public string Nom { get; protected set; }

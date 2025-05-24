@@ -5,22 +5,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+// Script qui gère le temps dans le jeu pour faire (pause/continuer)
 
 public class PauseMenu : MonoBehaviour
 {
-     [SerializeField] GameObject pauseMenu;
 
+    [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject optionsMenu;
 
-
     public static bool jeuPause = false;
+
     public void Pause()
     {
-        
             pauseMenu.SetActive(true);
             Time.timeScale = 0f;
             jeuPause = true;
-        
     }
 
 
