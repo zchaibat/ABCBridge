@@ -18,8 +18,8 @@ ABC Pont est un jeu éducatif et ludique de construction de ponts en 2D basé su
 
 ##  Instruction pour l'utilisateur
 
--Jouer avec un demo avec ce lien :
--Pour modifier ce jeu, ouvrez ce dossier github sur Unity Editor : 
+-Jouer avec un demo avec ce lien : https://play.unity.com/en/games/082c3963-0a7f-4351-bb41-e3058d7436ea/abc-pont
+-Pour modifier ce jeu, ouvrez ce dossier github sur Unity Editor 
 
 
 ##  Points à améliorer
